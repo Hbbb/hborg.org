@@ -159,7 +159,7 @@ body {
 
 .container {
 	padding: var(--space-large);
-	max-width: 900px;
+	max-width: 1000px;
 }
 
 /* Hero */
@@ -197,6 +197,10 @@ body {
 	justify-content: center;
 	align-items: center;
 
+}
+
+.icons__social__item img {
+	width: 40px;
 }
 
 .icons__social__item a {
