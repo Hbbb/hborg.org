@@ -222,7 +222,7 @@ body {
 /* --- What I've built */
 .project__title {
 	text-decoration: none;
-	color: var(--color-white);
+	color: var(--color-black);
 }
 
 .technologies__container {
@@ -242,9 +242,4 @@ body {
 	font-size: 50%;
 	font-weight: 500;
 	background: var(--color-base-darker);
-}
-
-.technologies__item:hover {
-	background-color: var(--color-blue);
-	color: var(--color-black);
 }
