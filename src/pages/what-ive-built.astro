@@ -3,7 +3,85 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section class="container">
+  <main class="container">
     <h1 class="title">What I've built</h1>
-  </section>
+    <p>
+      These are a selection of projects I'm currently working on. Check out my
+      GitHub to see everything I've ever built. Most of my projects are open
+      source.
+    </p>
+
+    <div class="content">
+      <section>
+        <a
+          class="project__title"
+          href="https://github.com/pump-factory/accountability-bot"
+          target="_blank"
+        >
+          <h2>Habit tracking Telegram bot</h2>
+        </a>
+        <p>
+          A Telegram bot that users can add to a chat room and begin tracking
+          habits socially. My friends and I built this to help us keep each
+          other accountable and involved in each other's lives, through the lens
+          of building habits.
+        </p>
+
+        <!-- Technologies -->
+        <div class="technologies__container">
+          <div class="technologies__item">Node.JS</div>
+          <div class="technologies__item">TypeScript</div>
+          <div class="technologies__item">Docker</div>
+          <div class="technologies__item">Digital Ocean</div>
+        </div>
+      </section>
+
+      <section>
+        <a
+          class="project__title"
+          href="https://github.com/hbbb/meditation-timer"
+          target="_blank"
+        >
+          <h2>Meditation Timer</h2>
+        </a>
+        <p>
+          A simple, elegantly designed meditation timer without the bloat of a
+          subscription model. I built this to help me meditate more regularly. I
+          was annoyed by the lack of a simple meditation timer that didn't
+          require a subscription. Moreso, most of the meditation apps available
+          have complex UIs that require too much interaction to start a timer.
+        </p>
+
+        <!-- Technologies -->
+        <div class="technologies__container">
+          <div class="technologies__item">iOS</div>
+        </div>
+      </section>
+
+      <section>
+        <a
+          class="project__title"
+          href="https://github.com/politicker/betterbike-ios"
+          target="_blank"
+        >
+          <h2>Better Bike</h2>
+        </a>
+        <p>
+          As a New York City resident and avid Citibike user, I was frustrated
+          by the design and UX of the official Citibike app. I realized that
+          most of the time when I use the Citibike app, I want to know which
+          stations close to me have electric bikes available, and how many there
+          are. I built BetterBike to solve exactly that problem.
+        </p>
+
+        <!-- Technologies -->
+        <div class="technologies__container">
+          <div class="technologies__item">iOS</div>
+          <div class="technologies__item">Go</div>
+          <div class="technologies__item">Postgres</div>
+          <div class="technologies__item">Fly.io</div>
+        </div>
+      </section>
+    </div>
+  </main>
 </Layout>
