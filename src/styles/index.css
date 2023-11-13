@@ -149,7 +149,6 @@ body {
 	text-decoration: none;
 	font-size: 50%;
 	font-weight: 500;
-	/* transition: background var(--transition), color var(--transition); */
 }
 
 .nav__item:hover {
@@ -162,6 +161,14 @@ body {
 	max-width: 1000px;
 }
 
+.content {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: var(--space-large);
+	gap: var(--space-large);
+	margin-top: var(--space-large);
+}
+
 /* Hero */
 .hero__intro {
 	font-size: var(--font-size-x-small);
@@ -170,12 +177,8 @@ body {
 .title {
 	font-weight: 900;
 	font-size: var(--font-size-xx-large);
+	/* margin-bottom: var(--space-x-large); */
 }
-
-/* .hero__description {
-	font-size: var(--font-size-small);
-} */
-
 
 /* Social Icons */
 .icons__social__container {
@@ -214,4 +217,34 @@ body {
 	height: 90px;
 	margin: 0 auto;
 	background-color: black;
+}
+
+/* --- What I've built */
+.project__title {
+	text-decoration: none;
+	color: var(--color-white);
+}
+
+.technologies__container {
+	display: flex;
+	gap: var(--space-small);
+	margin-top: var(--space-small);
+}
+
+.technologies__item {
+	border-radius: 2.5em;
+	color: var(--color-blue);
+	line-height: 1em;
+	letter-spacing: -0.01em;
+	padding: 0.8em 1.2em 0.7em 1.2em;
+	text-align: center;
+	text-decoration: none;
+	font-size: 50%;
+	font-weight: 500;
+	background: var(--color-base-darker);
+}
+
+.technologies__item:hover {
+	background-color: var(--color-blue);
+	color: var(--color-black);
 }
