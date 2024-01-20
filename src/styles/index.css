@@ -139,7 +139,7 @@ body {
 	counter-reset: nav-list;
 }
 
-.nav__item {
+.nav__link {
 	border-radius: 2.5em;
 	color: var(--color-blue);
 	line-height: 1em;
@@ -151,7 +151,7 @@ body {
 	font-weight: 500;
 }
 
-.nav__item:hover {
+.nav__link:hover {
 	background: var(--color-base-darker);
 	color: var(--color-black);
 }
@@ -171,14 +171,22 @@ body {
 }
 
 /* Hero */
-.hero__intro {
-	font-size: var(--font-size-x-small);
+.hero__title {
+	font-weight: 900;
+	font-size: var(--font-size-x-large);
+	/* margin-bottom: var(--space-x-large); */
 }
 
-.title {
-	font-weight: 900;
-	font-size: var(--font-size-xx-large);
-	/* margin-bottom: var(--space-x-large); */
+.hero__text_container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-medium);
+}
+
+.hero__text {
+	font-size: var(--font-size-small);
+	/* font-weight: 500; */
+	line-height: 1.5em;
 }
 
 /* Social Icons */
@@ -226,13 +234,13 @@ body {
 	color: var(--color-black);
 }
 
-.technologies__container {
+.project__technologies {
 	display: flex;
 	gap: var(--space-small);
 	margin-top: var(--space-small);
 }
 
-.technologies__item {
+.project__technology {
 	border-radius: 2.5em;
 	color: var(--color-blue);
 	line-height: 1em;
