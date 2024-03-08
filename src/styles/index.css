@@ -268,12 +268,23 @@ body {
 
 /* --- Mobile --- */
 @media (max-width: 768px) {
+	body {
+		padding: var(--space-small) 0;
+		gap: var(--space-medium);
+	}
+
 	.container {
-		padding: var(--space-large) var(--space-large) 0px var(--space-large);
+		padding: var(--space-small) var(--space-medium);
+	}
+
+	.nav {
+		padding: 0;
 	}
 
 	.nav__container {
 		flex-direction: column;
+		gap: var(--space-small);
+		justify-content: center;
 	}
 
 	.nav__items {
@@ -281,7 +292,7 @@ body {
 		gap: 1rem;
 	}
 
-	.nav__item {
+	.nav__link {
 		padding: 0;
 	}
 
