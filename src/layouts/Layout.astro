@@ -5,56 +5,56 @@
 
 // const { title } = Astro.props;
 
-import "../styles/index.css";
+import '../styles/index.css'
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Senior Freelance Software Engineer" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Harrison Borges</title>
-  </head>
-  <body>
-    <nav class="nav">
-      <div class="nav__container">
-        <a href="/" class="nav__logo">Harrison</a>
-        <div class="nav__menu">
-          <div class="nav__items">
-            <a href="/professional-experience" class="nav__link"
-              >Professional Experience</a
-            >
-            <a href="/what-ive-built" class="nav__link">Projects</a>
-            <a href="mailto:harrison@hborg.org" class="nav__link">Contact Me</a>
-          </div>
-        </div>
-      </div>
-    </nav>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Senior Freelance Software Engineer" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="index.css" />
+		<title>Harrison Borges</title>
+	</head>
+	<body>
+		<nav class="nav">
+			<div class="nav__container">
+				<a href="/" class="nav__logo">Harrison</a>
+				<div class="nav__menu">
+					<div class="nav__items">
+						<a href="/professional-experience" class="nav__link"
+							>Professional Experience</a
+						>
+						<a href="/what-ive-built" class="nav__link">Projects</a>
+						<a href="mailto:harrison@hborg.org" class="nav__link">Contact Me</a>
+					</div>
+				</div>
+			</div>
+		</nav>
 
-    <slot />
+		<slot />
 
-    <footer class="icons__social__container">
-      <ul class="icons__social">
-        <li class="icons__social__item" title="Github">
-          <a target="_blank" href="https://github.com/hbbb">
-            <img src="/images/github.svg" alt="" />
-          </a>
-        </li>
-        <li class="icons__social__item" title="Linkedin">
-          <a
-            href="https://www.linkedin.com/in/harrison-borges/"
-            target="_blank"
-          >
-            <img src="/images/linkedin.svg" alt="" />
-          </a>
-        </li>
-      </ul>
-    </footer>
-  </body>
+		<footer class="icons__social__container">
+			<ul class="icons__social">
+				<li class="icons__social__item" title="Github">
+					<a target="_blank" href="https://github.com/hbbb">
+						<img src="/images/github.svg" alt="" />
+					</a>
+				</li>
+				<li class="icons__social__item" title="Linkedin">
+					<a
+						href="https://www.linkedin.com/in/harrison-borges/"
+						target="_blank"
+					>
+						<img src="/images/linkedin.svg" alt="" />
+					</a>
+				</li>
+			</ul>
+		</footer>
+	</body>
 </html>
 <style is:global></style>
