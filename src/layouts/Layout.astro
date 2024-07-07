@@ -5,7 +5,8 @@
 
 // const { title } = Astro.props;
 
-import '../styles/index.css'
+import Navbar from '../components/Navbar.astro'
+import NavLink from '../components/NavLink.astro'
 ---
 
 <!doctype html>
@@ -17,26 +18,26 @@ import '../styles/index.css'
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="index.css" />
 		<title>Harrison Borges</title>
 	</head>
-	<body>
-		<nav class="nav">
-			<div class="nav__container">
-				<a href="/" class="nav__logo">Harrison</a>
-				<div class="nav__menu">
-					<div class="nav__items">
-						<a href="/professional-experience" class="nav__link"
-							>Professional Experience</a
-						>
-						<a href="/what-ive-built" class="nav__link">Projects</a>
-						<a href="mailto:harrison@hborg.org" class="nav__link">Contact Me</a>
-					</div>
-				</div>
-			</div>
-		</nav>
+	<body class="flex flex-col h-full bg-zinc-50 dark:bg-black">
+		<Navbar />
 
-		<slot />
+		<!-- <nav class="flex justify-between items-center">
+				<a href="/" class="text-4xl font-black">Harrison</a>
+				<div>
+					<NavLink
+						title="Professional Experience"
+						href="/professional-experience"
+					/>
+					<NavLink title="Projects" href="/what-ive-built" />
+					<NavLink title="Contact Me" href="mailto:harrison@hborg.org" />
+				</div>
+			</nav> -->
+
+		<main class="">
+			<slot />
+		</main>
 
 		<footer class="icons__social__container">
 			<ul class="icons__social">
