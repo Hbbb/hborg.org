@@ -21,22 +21,14 @@ import Footer from '../components/Footer.astro'
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Harrison Borges</title>
 	</head>
-	<body class="flex flex-col h-full bg-zinc-50 dark:bg-black">
-		<PageBackground />
-
-		<div class="relative flex w-full flex-col p-6">
+	<body class="h-full bg-zinc-50 dark:bg-black">
+		<div class="mx-auto min-h-screen flex w-full flex-col max-w-7xl bg-white">
 			<Navbar />
+			<!-- Main content area -->
 			<main class="flex-auto">
-				<div class="sm:px-8 mt-16 sm:mt-32">
-					<div class="mx-auto w-full max-w-7xl lg:px-8">
-						<div class="relative px-4 sm:px-8 lg:px-12">
-							<div class="mx-auto max-w-2xl lg:max-w-5xl">
-								<slot />
-							</div>
-						</div>
-					</div>
-				</div>
+				<slot />
 			</main>
+			<!-- Main content area -->
 			<Footer />
 		</div>
 	</body>
