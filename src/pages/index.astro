@@ -3,20 +3,33 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-	<main>
-		<h1 class="">Software engineer, founder, and safe-streets advocate.</h1>
-		<p class="">
-			I'm Harrison, a software engineer based in New York City. I am the founder
-			of the Loose Collective, a software consultancy based in Brooklyn that
-			focuses on helping local small businesses build an online presence.
+	<div
+		class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
+	>
+		<div class="lg:order-first lg:row-span-2">
+			<h1
+				class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
+			>
+				Software engineer, founder, and safe-streets advocate.
+			</h1>
 
-			<!-- I am an
+			<div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+				<p class="">
+					I'm Harrison, a software engineer based in New York City. I am the
+					founder of the Loose Collective, a software consultancy based in
+					Brooklyn that focuses on helping local small businesses build an
+					online presence.
+
+					<!-- I am an
 			experienced independent consultant and freelance software engineer. I run
 			a small software consultancy that helps companies build and scale their
 			products. -->
-		</p>
+				</p>
+			</div>
+		</div>
+	</div>
 
-		<!-- <p class="page__text">
+	<!-- <p class="page__text">
 			I provide anything from independent contributions to filling a fractional
 			CTO role. I can help you go from 0 to 1 as a technical co-founder.
 		</p>
@@ -28,5 +41,4 @@ import Layout from '../layouts/Layout.astro'
 			engineering. I've been building software professionally since 2012. I've
 			helped early-stage startups scale their products to millions of users.
 		</p> -->
-	</main>
 </Layout>
