@@ -4,56 +4,54 @@ import Socials from '../components/Socials.astro'
 ---
 
 <Layout>
-	<div class="mt-16 sm:mt-32 px-4 sm:px-8 lg:px-12">
-		<div
-			class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
-		>
-			<div class="lg:pl-20">
-				<div class="max-w-xs px-2.5 lg:max-w-none">
-					<img
-						src="public/images/about-hero.jpeg"
-						loading="lazy"
-						alt=""
-						class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-					/>
-				</div>
+	<div
+		class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
+	>
+		<div class="lg:pl-20">
+			<div class="max-w-xs px-2.5 lg:max-w-none">
+				<img
+					src="public/images/about-hero.jpeg"
+					loading="lazy"
+					alt=""
+					class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+				/>
 			</div>
+		</div>
 
-			<div class="lg:order-first lg:row-span-2">
-				<h1
-					class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
-				>
-					Software engineer, founder, and NYC safe-streets advocate.
-				</h1>
+		<div class="lg:order-first lg:row-span-2">
+			<h1
+				class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
+			>
+				Software engineer, founder, and NYC safe-streets advocate.
+			</h1>
 
-				<div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-					<p>
-						I'm Harrison, a software engineer based in New York City. I am the
-						founder of the Loose Collective, a software consultancy based in
-						Brooklyn that focuses on helping local small businesses build an
-						online presence.
-					</p>
+			<div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+				<p>
+					I'm Harrison, a software engineer based in New York City. I am the
+					founder of the Loose Collective, a software consultancy based in
+					Brooklyn that focuses on helping local small businesses build an
+					online presence.
+				</p>
 
-					<p>
-						I have worked at companies ranging from seed-stage startups to
-						mid-sized companies later into their funding rounds. I've worked as
-						a founding engineer bootstrapping a new product and trying to find
-						market fit, mid-sized companies trying to scale their products, and
-						as a fractional CTO and thought partner for a variety of freelance
-						clients.
-					</p>
+				<p>
+					I have worked at companies ranging from seed-stage startups to
+					mid-sized companies later into their funding rounds. I've worked as a
+					founding engineer bootstrapping a new product and trying to find
+					market fit, mid-sized companies trying to scale their products, and as
+					a fractional CTO and thought partner for a variety of freelance
+					clients.
+				</p>
 
-					<p>
-						In my free time, I work on various self-software projects mostly
-						focused on data democratization, safe streets advocacy, and various
-						productivity and workflow tools.
-					</p>
-				</div>
+				<p>
+					In my free time, I work on various self-software projects mostly
+					focused on data democratization, safe streets advocacy, and various
+					productivity and workflow tools.
+				</p>
 			</div>
+		</div>
 
-			<div class="lg:pl-20">
-				<Socials />
-			</div>
+		<div class="lg:pl-20">
+			<Socials />
 		</div>
 	</div>
 </Layout>

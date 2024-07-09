@@ -1,0 +1,66 @@
+---
+import ExperienceCard from '../components/ExperienceCard.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout>
+	<header class="max-w-2xl">
+		<h1
+			class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
+		>
+			I've worked at a variety of small to medium sized tech companies. I've
+			done consumer facing and b2b.
+		</h1>
+
+		<p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+			I've been fortunate to work at a variety of small to medium sized tech
+			companies, which I have found to be ideal environments for learning within
+			an established engineering culture. As a self-taught engineer, I have had
+			the good fortune to learn from some amazing people along the way.
+		</p>
+	</header>
+
+	<div class="mt-16 sm:mt-20">
+		<div class="space-y-20">
+			<section
+				class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
+			>
+				<div
+					class="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-4"
+				>
+					<h2 class="text-sm font-semibold text-zinc-800 dark:text-zinc-100">
+						Professional Experience
+					</h2>
+					<div class="md:col-span-3">
+						<div class="space-y-16">
+							<ExperienceCard
+								dates="Jun 2023 - July 2024"
+								title="Kontango · Lead Engineer"
+								description="A technical deep-dive into HelioStream, the real-time streaming library I wrote for transmitting live video back to Earth."
+								website="https://kontango.com"
+							/>
+							<ExperienceCard
+								dates="November 2021 - July 2023"
+								title="Sodality Technologies · Lead Engineer"
+								description="A social media app that encourages spontaneous, real-life interactions. I was the principal backend and devops engineer."
+								website="https://pingapp.nyc"
+							/>
+							<ExperienceCard
+								dates="December 2017 - November 2021"
+								title="Freshly · Senior Software Engineer"
+								description="A meal delivery service that makes it easy to eat healthy. I was "
+								website="https://freshly.com"
+							/>
+							<ExperienceCard
+								dates="May 2013 - December 2017"
+								title="Verve Mobile · Software Engineer"
+								description="Fullstack software engineer working on internal and external web applications, mostly using Ruby on Rails and React."
+								website="https://vervemobile.com"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</Layout>
