@@ -2,6 +2,9 @@
 import ColorSchemeSwitch from './ColorSchemeSwitch.astro'
 import MobileLinkTray from './MobileLinkTray.astro'
 import NavLink from './NavLink.astro'
+import { Image } from 'astro:assets'
+
+import profileImage from '../images/profile.jpeg'
 ---
 
 <header>
@@ -14,16 +17,15 @@ import NavLink from './NavLink.astro'
 					class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10"
 				>
 					<a href="/">
-						<img
-							alt=""
+						<Image
+							src={profileImage}
+							alt="An image of a man wearing glasses and a hat, with a cool mustache"
 							fetchpriority="high"
 							width="512"
 							height="512"
-							decoding="async"
-							data-nimg="1"
+							class=""
 							class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9"
 							sizes="2.25rem"
-							src="public/images/profile.jpeg"
 							style="color: transparent;"
 						/>
 					</a>
