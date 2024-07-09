@@ -33,5 +33,17 @@ import Footer from '../components/Footer.astro'
 			<!-- Main content area -->
 			<Footer />
 		</div>
+
+		{/* Dark mode localstorage */}
+		<script>
+			const theme = localStorage.getItem('theme')
+			const prefersDarkMode = window.matchMedia(
+				'(prefers-color-scheme: dark)'
+			).matches
+
+			if (theme === 'dark' || prefersDarkMode) {
+				document.documentElement.classList.add('dark')
+			}
+		</script>
 	</body>
 </html>

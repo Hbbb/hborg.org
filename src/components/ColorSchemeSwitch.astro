@@ -1,3 +1,7 @@
+---
+
+---
+
 <div id="dark-mode-toggle" class="flex sm:flex-1 justify-end">
 	<button
 		class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
@@ -10,7 +14,7 @@
 			stroke-linecap="round"
 			stroke-linejoin="round"
 			aria-hidden="true"
-			class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-blue-50 [@media(prefers-color-scheme:dark)]:stroke-blue-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-blue-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-600"
+			class="hidden h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-blue-50 [@media(prefers-color-scheme:dark)]:stroke-blue-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-blue-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-blue-600"
 			><path
 				d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z"
 			></path><path
@@ -39,11 +43,19 @@
 	const darkModeIcon = document.getElementById('dark-mode-icon')
 	const lightModeIcon = document.getElementById('light-mode-icon')
 
-	const html = document.documentElement
+	const prefersDarkScheme = window.matchMedia(
+		'(prefers-color-scheme: dark)'
+	).matches
+
+	darkModeIcon?.classList.toggle('hidden', !prefersDarkScheme)
+	lightModeIcon?.classList.toggle('hidden', prefersDarkScheme)
 
 	darkModeToggle?.addEventListener('click', () => {
-		html.classList.toggle('dark')
+		document.documentElement.classList.toggle('dark')
 		darkModeIcon?.classList.toggle('hidden')
 		lightModeIcon?.classList.toggle('hidden')
+
+		const currentTheme = localStorage.getItem('theme')
+		localStorage.setItem('theme', currentTheme === 'dark' ? 'dark' : 'light')
 	})
 </script>
