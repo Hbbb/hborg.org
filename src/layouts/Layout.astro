@@ -5,7 +5,8 @@
 
 // const { title } = Astro.props;
 
-import '../styles/index.css'
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <!doctype html>
@@ -13,48 +14,24 @@ import '../styles/index.css'
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Senior Freelance Software Engineer" />
-		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="index.css" />
 		<title>Harrison Borges</title>
 	</head>
-	<body>
-		<nav class="nav">
-			<div class="nav__container">
-				<a href="/" class="nav__logo">Harrison</a>
-				<div class="nav__menu">
-					<div class="nav__items">
-						<a href="/professional-experience" class="nav__link"
-							>Professional Experience</a
-						>
-						<a href="/what-ive-built" class="nav__link">Projects</a>
-						<a href="mailto:harrison@hborg.org" class="nav__link">Contact Me</a>
-					</div>
+	<body class="h-full bg-zinc-50 dark:bg-black">
+		<div
+			class="mx-auto min-h-screen flex w-full flex-col max-w-7xl bg-white dark:bg-black"
+		>
+			<Navbar />
+			<!-- Main content area -->
+			<main class="flex-auto">
+				<div class="mt-16 sm:mt-32 px-4 sm:px-8 lg:px-12">
+					<slot />
 				</div>
-			</div>
-		</nav>
-
-		<slot />
-
-		<footer class="icons__social__container">
-			<ul class="icons__social">
-				<li class="icons__social__item" title="Github">
-					<a target="_blank" href="https://github.com/hbbb">
-						<img src="/images/github.svg" alt="" />
-					</a>
-				</li>
-				<li class="icons__social__item" title="Linkedin">
-					<a
-						href="https://www.linkedin.com/in/harrison-borges/"
-						target="_blank"
-					>
-						<img src="/images/linkedin.svg" alt="" />
-					</a>
-				</li>
-			</ul>
-		</footer>
+			</main>
+			<!-- Main content area -->
+			<Footer />
+		</div>
 	</body>
 </html>
-<style is:global></style>

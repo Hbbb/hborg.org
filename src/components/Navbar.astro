@@ -1,0 +1,88 @@
+---
+import ColorSchemeSwitch from './ColorSchemeSwitch.astro'
+import MobileLinkTray from './MobileLinkTray.astro'
+import NavLink from './NavLink.astro'
+---
+
+<header>
+	<div class="pt-6">
+		<!-- Navbar Container -->
+		<div class="flex gap-2 sm:gap-4 px-4 sm:px-8 lg:px-12">
+			<!-- Picture -->
+			<div class="flex-1">
+				<div
+					class="h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10"
+				>
+					<a href="/">
+						<img
+							alt=""
+							fetchpriority="high"
+							width="512"
+							height="512"
+							decoding="async"
+							data-nimg="1"
+							class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 h-9 w-9"
+							sizes="2.25rem"
+							src="public/images/profile.jpeg"
+							style="color: transparent;"
+						/>
+					</a>
+				</div>
+			</div>
+
+			<!-- Desktop Link Tray -->
+			<nav class="flex-1 hidden sm:block">
+				<ul
+					class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
+				>
+					<NavLink title="About" href="/" />
+					<NavLink title="Experience" href="/experience" />
+					<NavLink title="Projects" href="/projects" />
+					<NavLink title="Contact" href="mailto:harrison@hborg.org" />
+					<NavLink title="Blog" href="/blog" />
+				</ul>
+			</nav>
+
+			<!-- Mobile Links -->
+			<div class="flex sm:hidden sm:flex-1">
+				<button
+					id="mobile-link-tray-button"
+					class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
+				>
+					Menu
+					<svg
+						viewBox="0 0 8 6"
+						aria-hidden="true"
+						class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400"
+						><path
+							d="M1.75 1.75 4 4.25l2.25-2.5"
+							fill="none"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path></svg
+					>
+				</button>
+
+				<MobileLinkTray open={false} />
+			</div>
+
+			<!-- Dark mode toggle -->
+			<ColorSchemeSwitch />
+		</div>
+		<!-- Navbar -->
+	</div>
+</header>
+
+<script>
+	const menuButton = document.querySelector('#mobile-link-tray-button')
+	const linkTray = document.querySelector('#mobile-link-tray')
+	const backgroundBlur = document.querySelector('#background-blur')
+
+	menuButton?.addEventListener('click', () => {
+		const isOpen = linkTray?.classList.contains('hidden')
+		linkTray?.classList.toggle('hidden')
+		backgroundBlur?.classList.toggle('hidden')
+
+		document.body.style.overflow = isOpen ? 'hidden' : 'auto'
+	})
+</script>
