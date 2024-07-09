@@ -43,19 +43,27 @@
 	const darkModeIcon = document.getElementById('dark-mode-icon')
 	const lightModeIcon = document.getElementById('light-mode-icon')
 
+	const currentTheme = localStorage.getItem('theme')
 	const prefersDarkScheme = window.matchMedia(
 		'(prefers-color-scheme: dark)'
 	).matches
 
-	darkModeIcon?.classList.toggle('hidden', !prefersDarkScheme)
-	lightModeIcon?.classList.toggle('hidden', prefersDarkScheme)
+	if (
+		(prefersDarkScheme && currentTheme !== 'light') ||
+		currentTheme === 'dark'
+	) {
+		lightModeIcon?.classList.add('hidden')
+		darkModeIcon?.classList.remove('hidden')
+	} else {
+		darkModeIcon?.classList.add('hidden')
+		lightModeIcon?.classList.remove('hidden')
+	}
 
 	darkModeToggle?.addEventListener('click', () => {
 		document.documentElement.classList.toggle('dark')
 		darkModeIcon?.classList.toggle('hidden')
 		lightModeIcon?.classList.toggle('hidden')
 
-		const currentTheme = localStorage.getItem('theme')
-		localStorage.setItem('theme', currentTheme === 'dark' ? 'dark' : 'light')
+		localStorage.setItem('theme', currentTheme === 'dark' ? 'light' : 'dark')
 	})
 </script>

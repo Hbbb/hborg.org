@@ -1,10 +1,4 @@
 ---
-// interface Props {
-//   title: string;
-// }
-
-// const { title } = Astro.props;
-
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 ---
@@ -24,13 +18,13 @@ import Footer from '../components/Footer.astro'
 			class="mx-auto min-h-screen flex w-full flex-col max-w-7xl bg-white dark:bg-black"
 		>
 			<Navbar />
-			<!-- Main content area -->
+			{/* Main content area */}
 			<main class="flex-auto">
 				<div class="mt-16 sm:mt-32 px-4 sm:px-8 lg:px-12">
 					<slot />
 				</div>
 			</main>
-			<!-- Main content area -->
+			{/* Main content area */}
 			<Footer />
 		</div>
 
@@ -41,7 +35,7 @@ import Footer from '../components/Footer.astro'
 				'(prefers-color-scheme: dark)'
 			).matches
 
-			if (theme === 'dark' || prefersDarkMode) {
+			if (theme === 'dark' || (prefersDarkMode && theme !== 'light')) {
 				document.documentElement.classList.add('dark')
 			}
 		</script>
