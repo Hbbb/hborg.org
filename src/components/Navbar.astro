@@ -1,6 +1,7 @@
 ---
 import ColorSchemeSwitch from './ColorSchemeSwitch.astro'
 import MobileLinkTray from './MobileLinkTray.astro'
+import NavLink from './NavLink.astro'
 ---
 
 <header>
@@ -34,49 +35,11 @@ import MobileLinkTray from './MobileLinkTray.astro'
 				<ul
 					class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10"
 				>
-					<li>
-						<a
-							href=""
-							class="relative block px-3 py-2 transition text-primary dark:text-primary"
-						>
-							About
-							<span
-								class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-blue-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-blue-400/40 dark:to-teal-400/0"
-							></span>
-						</a>
-					</li>
-					<li>
-						<a
-							href="/experience"
-							class="relative block px-3 py-2 transition hover:text-primary dark:hover:text-teal-400"
-						>
-							Experience
-						</a>
-					</li>
-					<li>
-						<a
-							href=""
-							class="relative block px-3 py-2 transition hover:text-blue-500"
-						>
-							Projects
-						</a>
-					</li>
-					<li class="hidden sm:block">
-						<a
-							href=""
-							class="relative block px-3 py-2 transition hover:text-blue-500"
-						>
-							Contact
-						</a>
-					</li>
-					<li class="hidden sm:block">
-						<a
-							href="/blog"
-							class="relative block px-3 py-2 transition hover:text-blue-500"
-						>
-							Blog
-						</a>
-					</li>
+					<NavLink title="About" href="/" />
+					<NavLink title="Experience" href="/experience" />
+					<NavLink title="Projects" href="/projects" />
+					<NavLink title="Contact" href="mailto:harrison@hborg.org" />
+					<NavLink title="Blog" href="/blog" />
 				</ul>
 			</nav>
 

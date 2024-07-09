@@ -4,12 +4,21 @@ interface Props {
 	href: string
 }
 
+const currentURL = new URL(Astro.request.url)
+
 const { title, href } = Astro.props
 ---
 
-<a
-	href={href}
-	class="rounded-full hover:bg-gray-100 text-primary leading-none tracking-tighter px-5 py-4 text-center no-underline text-lg font-medium"
->
-	{title}
-</a>
+<li>
+	<a
+		href={href}
+		class="relative block px-3 py-2 transition hover:text-blue-500 dark:hover:text-blue-400"
+	>
+		{title}
+		<span
+			class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-blue-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-blue-400/40 dark:to-teal-400/0"
+			class:list={{
+				hidden: currentURL.pathname !== href,
+			}}></span>
+	</a>
+</li>
