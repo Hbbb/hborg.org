@@ -1,24 +1,14 @@
 ---
 import ExperienceCard from '../components/ExperienceCard.astro'
+import PageHeader from '../components/PageHeader.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-	<header class="max-w-2xl">
-		<h1
-			class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
-		>
-			I've worked at a variety of small to medium sized tech companies. I've
-			done consumer facing and b2b.
-		</h1>
-
-		<p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-			I've been fortunate to work at a variety of small to medium sized tech
-			companies, which I have found to be ideal environments for learning within
-			an established engineering culture. As a self-taught engineer, I have had
-			the good fortune to learn from some amazing people along the way.
-		</p>
-	</header>
+	<PageHeader
+		headline="I've worked at a variety of small to medium sized tech companies. I've done consumer facing and b2b."
+		subheadline="I've been fortunate to work at a variety of small to medium sized tech companies, which I have found to be ideal environments for learning within an established engineering culture. As a self-taught engineer, I have had the good fortune to learn from some amazing people along the way."
+	/>
 
 	<div class="mt-16 sm:mt-20">
 		<div class="space-y-20">
