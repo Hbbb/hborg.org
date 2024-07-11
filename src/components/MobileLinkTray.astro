@@ -64,5 +64,6 @@ interface Props {
 	linkTray?.addEventListener('click', () => {
 		backgroundBlur?.classList.add('hidden')
 		mobileLinkTray?.classList.add('hidden')
+		document.body.style.overflow = 'auto'
 	})
 </script>
