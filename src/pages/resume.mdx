@@ -5,6 +5,9 @@ layout: ../layouts/Resume.astro
 pdfLink: resume.pdf
 ---
 
+import Technologies from '../components/resume/Technologies.astro';
+import Container from '../components/resume/Container.astro';
+
 # Harrison Borges
 
 **Programmer**
@@ -15,7 +18,7 @@ Blah blah I'm a lead software engineer. I've done some things in my career and I
 
 ## Skills
 
-Go, TypeScript, Node.js, SQL, Ruby, Postgres, HTML/CSS, React, AWS/GCP, Terraform, Cloudformation, Docker
+<Technologies />
 
 ## Work Experience
 
@@ -41,6 +44,7 @@ Short, two-sentence-max description of the role
 - Oversaw backend infrastructure, highlighted by the creation of a graph-traversal friend recommendation system and a contact analysis pipeline.
 
 ### [Freshly](https://freshly.com)
+
 
 #### Senior DevOps Engineer | July 2023 - July 2024
 
@@ -70,7 +74,11 @@ Short, two-sentence-max description of the role
 
 ---
 
-<div class="flex justify-between text-md px-10">
-	<span>Github: <a href="https://github.com/hbbb">@hbbb</a></span>
-	<span><a mailto="harrison@hborg.org">harrison@hborg.org</a></span>
+<div class="text-md flex justify-between px-10">
+	<span>
+		Github: <a href="https://github.com/hbbb">@hbbb</a>
+	</span>
+	<span>
+		<a mailto="harrison@hborg.org">harrison@hborg.org</a>
+	</span>
 </div>
