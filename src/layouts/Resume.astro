@@ -1,0 +1,68 @@
+---
+import Download from '../components/Download.astro'
+import Prose from '../components/resume/Prose.astro'
+import '../style.css'
+
+type Props = {
+	frontmatter: {
+		title: string
+		pdfLink: string
+		noIndex?: boolean
+		description?: string
+	}
+}
+
+const { PDF_VIEW, FORCE_THEME = '' } = import.meta.env
+
+const { title, pdfLink, noIndex, description } = Astro.props
+	.frontmatter as Props['frontmatter']
+---
+
+<!doctype html>
+<html lang="en" class={FORCE_THEME}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description || title} />
+		{noIndex && <meta name="robots" content="noindex" />}
+		<title>{title}</title>
+	</head>
+	<body class:list={[['']]}>
+		<main class="flex justify-center p-4">
+			{
+				!PDF_VIEW && (
+					<div id="download-btn" class="absolute right-4 top-4">
+						<Download href={pdfLink} />
+					</div>
+				)
+			}
+			<Prose>
+				<slot />
+			</Prose>
+		</main>
+		<style>
+			@media print {
+				/* Set margins for the printed document */
+				@page {
+					margin: 1in; /* Adjust this value as needed */
+				}
+
+				body {
+					margin: 0; /* Remove default margin */
+					padding: 0; /* Remove default padding */
+				}
+
+				main {
+					display: block;
+					padding: 0;
+				}
+
+				/* h3 + h4 + h5 + p + ul {
+					page-break-inside: avoid;
+				} */
+			}
+		</style>
+	</body>
+</html>
