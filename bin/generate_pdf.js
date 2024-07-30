@@ -9,8 +9,8 @@ const main = async () => {
 
 	await page.pdf({
 		path: 'public/resume.pdf',
-		margin: { top: '20px', bottom: '80px' },
-		printBackground: true,
+		// margin: { top: '0', bottom: '0' },
+		// printBackground: true,
 	})
 
 	return browser.close()
