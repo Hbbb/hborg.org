@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-pdf": "PDF_VIEW=true node ./bin/generate_pdf.js"
+    "generate-pdf": "PDF_VIEW=true rm ./public/resume.pdf && node ./bin/generate_pdf.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
