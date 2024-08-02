@@ -45,6 +45,9 @@ import profileImage from '../images/profile.jpeg'
 				</ul>
 			</nav>
 
+			<!-- Dark mode toggle -->
+			<ColorSchemeSwitch />
+
 			<!-- Mobile Links -->
 			<div class="flex sm:hidden sm:flex-1">
 				<button
@@ -67,9 +70,6 @@ import profileImage from '../images/profile.jpeg'
 
 				<MobileLinkTray open={false} />
 			</div>
-
-			<!-- Dark mode toggle -->
-			<ColorSchemeSwitch />
 		</div>
 		<!-- Navbar -->
 	</div>
@@ -77,13 +77,23 @@ import profileImage from '../images/profile.jpeg'
 
 <script>
 	const menuButton = document.querySelector('#mobile-link-tray-button')
-	const linkTray = document.querySelector('#mobile-link-tray')
-	const backgroundBlur = document.querySelector('#background-blur')
+	const linkTray = document.getElementById('mobile-link-tray')
+	const backgroundBlur = document.getElementById('background-blur')
 
 	menuButton?.addEventListener('click', () => {
+		if (!linkTray || !backgroundBlur) return
+
 		const isOpen = linkTray?.classList.contains('hidden')
-		linkTray?.classList.toggle('hidden')
-		backgroundBlur?.classList.toggle('hidden')
+		linkTray.classList.toggle('hidden')
+		backgroundBlur.classList.toggle('hidden')
+
+		linkTray.classList.remove('opacity-0')
+		backgroundBlur.classList.remove('opacity-0')
+		linkTray.classList.add('opacity-100')
+		backgroundBlur.classList.add('opacity-100')
+
+		// backgroundBlur.style.opacity = '1'
+		// linkTray.style.opacity = '1'
 
 		document.body.style.overflow = isOpen ? 'hidden' : 'auto'
 	})

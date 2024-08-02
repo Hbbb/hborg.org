@@ -7,19 +7,16 @@ interface Props {
 <!-- Blur background -->
 <div
 	id="background-blur"
-	class="hidden fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm duration-150 data-[closed]:opacity-0 data-[enter]:ease-out data-[leave]:ease-in dark:bg-black/80"
+	class="hidden fixed opacity-0 transition-opacity inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80"
 >
 </div>
 
 <!-- Link Tray -->
 <div
 	id="mobile-link-tray"
-	class="hidden fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 duration-150 data-[closed]:scale-95 data-[closed]:opacity-0 data-[enter]:ease-out data-[leave]:ease-in dark:bg-zinc-900 dark:ring-zinc-800"
+	class="hidden fixed opacity-0 transition-opacity ease-in-out duration-1000 inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
 >
-	<div class="flex justify-between items-center">
-		<span class="text-sm font-medium text-zinc-600 dark:text-zinc-400"
-			>Navigation</span
-		>
+	<div class="flex items-center">
 		<button id="link-tray-close" class="-m-1 p-1">
 			<svg
 				viewBox="0 0 24 24"
@@ -37,20 +34,15 @@ interface Props {
 	</div>
 
 	<nav class="mt-6">
-		<ul
-			class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300"
-		>
+		<ul class="-my-2 text-base text-zinc-800 dark:text-zinc-300">
 			<li>
-				<a class="block py-2" href="/about">About</a>
+				<a class="block py-3" href="/about">About</a>
 			</li>
 			<li>
-				<a class="block py-2" href="/experience">Experience</a>
+				<a class="block py-3" href="/experience">Experience</a>
 			</li>
 			<li>
-				<a class="block py-2" href="/projects">Projects</a>
-			</li>
-			<li>
-				<a class="block py-2" href="/blog">Blog</a>
+				<a class="block py-3" href="/projects">Projects</a>
 			</li>
 		</ul>
 	</nav>
@@ -62,8 +54,11 @@ interface Props {
 	const mobileLinkTray = document.getElementById('mobile-link-tray')
 
 	linkTray?.addEventListener('click', () => {
+		if (!backgroundBlur || !mobileLinkTray) return
+
 		backgroundBlur?.classList.add('hidden')
 		mobileLinkTray?.classList.add('hidden')
+
 		document.body.style.overflow = 'auto'
 	})
 </script>
